@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  private urlapi = 'https://api-sensor.herokuapp.com/hello/w';
+  //private urlapi = 'https://api-sensor.herokuapp.com/hello/w';
+  private urlapi = '/REST_test/hello/w';
   title = 'SensorApp';
   public currentEuroRates: any = null;
 
@@ -18,9 +18,11 @@ export class AppComponent {
     this.getCurrentEuroRates();
   }
 
+  
   private getCurrentEuroRates() {
     const currencies = 'USD,GBP,CHF,JPY';
     const url = `${this.urlapi}?symbols=${currencies}`;
+    
     this.httpClient
       .get(url, {responseType: 'text'})
       .subscribe(apiData => (this.currentEuroRates = apiData));
