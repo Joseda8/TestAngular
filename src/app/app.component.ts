@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   private urlapi = 'https://api-sensor.herokuapp.com/hello/w';
   //private urlapi = 'http://localhost:8080/REST_test/hello/w';
+  //"start": "ng serve --proxy-config proxy.conf.json",
+
   title = 'SensorApp';
   public currentEuroRates: any = null;
 
