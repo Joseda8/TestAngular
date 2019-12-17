@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //private urlapi = 'https://api-sensor.herokuapp.com/hello/w';
-  private urlapi = '/hello/w';
+  private urlapi = 'https://api-sensor.herokuapp.com/hello/w';
+  //private urlapi = 'http://localhost:8080/REST_test/hello/w';
   title = 'SensorApp';
   public currentEuroRates: any = null;
 
