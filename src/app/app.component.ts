@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private urlapi = 'https://api-sensor.herokuapp.com/hello/w';
-  //private urlapi = 'http://localhost:8080/REST_test/hello/w';
+  //private urlapi = 'https://api-sensor.herokuapp.com/hello/w';
+  private urlapi = 'http://localhost:8080/REST_test/hello/w';
   //"start": "ng serve --proxy-config proxy.conf.json",
 
   title = 'SensorApp';
@@ -26,8 +26,8 @@ export class AppComponent {
     const url = `${this.urlapi}?symbols=${currencies}`;
     
     this.httpClient
-      .get(url, {responseType: 'text'})
-      .subscribe(apiData => (this.currentEuroRates = apiData));
+      .get(url, {responseType: 'json'})
+      .subscribe(apiData => (this.currentEuroRates = apiData['enviroment']));
   }
 
 //      .subscribe(data => console.log(data))

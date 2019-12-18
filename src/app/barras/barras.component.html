@@ -1,0 +1,18 @@
+<div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+        </canvas>
+
+        <p></p>
+        <button type="button" (click)="getTemperature()" class="btn btn-primary btn-lg btn-block">
+            Actualizar
+        </button>
+
+  </div>
