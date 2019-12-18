@@ -11,7 +11,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BarrasComponent implements OnInit {
 
-  private urlapi = 'http://localhost:8080/REST_test/hello/w';
+  private urlapi = 'https://api-sensor.herokuapp.com/hello/w';
+  //private urlapi = 'http://localhost:8080/REST_test/hello/w';
   public enviroment_temp: any = null;
 
   public barChartOptions: ChartOptions = {
