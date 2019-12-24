@@ -17,13 +17,14 @@ export class BarrasComponent implements OnInit {
 
   public barChartOptions: ChartOptions = {
     responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
+    tooltips: { enabled: false },
     scales: { xAxes: [{}], yAxes: [{scaleLabel: {
       display: true,
       labelString: '°C'
     }, ticks: { 
-        stepSize : 5 
-      }
+        min : 0,
+        //stepSize : 5 
+      }, 
   }] },
     plugins: {
       datalabels: {
@@ -38,14 +39,14 @@ export class BarrasComponent implements OnInit {
   public barChartPlugins = [pluginDataLabels];
 
   public barChartData: ChartDataSets[] = [
-    { data: [], label: 'Ambiente' },
-    { data: [], label: 'Objeto' }
+    { data: [0], label: 'Ambiente' },
+    { data: [0], label: 'Objeto' }
   ];
 
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.getTemperature();
+    setInterval(this.getTemperature.bind(this), 500);
   }
 
   // events
